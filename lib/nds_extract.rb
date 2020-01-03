@@ -53,18 +53,18 @@ def total_gross(source)
     index = 0
     total = 0 
     while index < source[director_index][:movies][index].length do
-      puts director_index
-      puts total
-      puts '-'
-      total = total + source[director_index][:movies][index][:worldwide_gross]
-      puts total
-      puts 'next'
+      puts source[director_index][:name]
+      puts total = source[director_index][:movies][index][:worldwide_gross]
+      puts 'movie' 
+      puts index 
+      
       
     index += 1
     # binding.pry
     end
-    total
-    total_gross = total + total_gross
+    puts total
+    puts 'next'
+    puts total_gross += total
 
   director_index += 1   
   end
