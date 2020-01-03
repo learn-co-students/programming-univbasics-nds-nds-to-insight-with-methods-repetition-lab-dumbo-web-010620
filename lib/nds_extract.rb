@@ -10,6 +10,7 @@ def directors_totals(source)
     director_index += 1
   end
   result
+  #print result
 end
 
 def gross_for_director(d)
@@ -26,6 +27,15 @@ end
 
 def list_of_directors(source)
   # Write this implementation
+  num = source.length;
+  list_of_directors = [];
+
+  num.times do |index|
+    list_of_directors.push(source[index][:name])
+  end
+
+  list_of_directors
+
 end
 
 def total_gross(source)
@@ -38,6 +48,14 @@ def total_gross(source)
   # Visit each key (i.e. director name), look up the value in the hash
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
+
+  directors_list = list_of_directors(source);
+  num_of_directors = directors_list.length;
+  total = 0;
+  total_hash = directors_totals(source);
+
+  num_of_directors.times do |index|
+    total += total_hash[directors_list[index]]
+  end
+  total
 end
-
-
